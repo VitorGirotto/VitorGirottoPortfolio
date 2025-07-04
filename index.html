@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meu Site Pessoal</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#" onclick="mostrarSecao('sobre')">Sobre Mim</a></li>
+      <li><a href="#" onclick="mostrarSecao('formacao')">Formação</a></li>
+      <li><a href="#" onclick="mostrarSecao('portfolio')">Portfólio</a></li>
+      <li><a href="#" onclick="mostrarSecao('contato')">Contato</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div id="sobre" class="secao">
+      <h1>Sobre Mim</h1>
+      <img src="self_portrait.png" alt="Auto Retrato" id="retrato">
+      <p>Olá! Meu nome é Vitor Cézar Girotto. Tenho contato com programação desde pequeno por conta do meu irmão, que tambem é programador.
+         No ensino médio fiz técnico de informatica, onde aprendi diversas linguagens, sendo PHP a que mais utilizei. Apesar desse contato com programação, decidi 
+        perseguir a profissão de Ilustrador e Concept Artist. Estudei por vários anos, fiz alguns trabalhos, mas depois de um tempo decidi voltar á área de desenvolvedor,
+      tendo influências de amigos e do meu irmão para voltar. </p>
+      <p>Meus Hobbies consistem em programar, desenhar, pintar, jogar video games e academia. A imagem acima é um auto retrato.</p>
+    </div>
+
+    <div id="formacao" class="secao" style="display:none">
+      <h1>Formação</h1>
+      <p>Atualmente estudando Análise e Desenvolvimento de Sistemas na faculdade Uninter.
+         Tenho conhecimento em HTML, CSS, JavaScript e Python. Atualmente estou estudando Golang, uma linguagem que pretendo trabalhar com no futuro. </p>
+      <p>Idiomas: Português (nativo), Inglês (avançado).</p>
+    </div>
+
+    <div id="portfolio" class="secao" style="display:none">
+      <h1>Portfólio</h1>
+      <ul>
+        <li>
+          <a href="https://github.com/VitorGirotto/asteroids" target="_blank" class="port_link">Asteroid Game
+            <!-- usei a tag span para criar uma caixa de informações para quando o mouse passar por cima dos links de cada projeto -->
+            <span class="tooltip">Jogo de Asteroids feito em Python, usando a biblioteca pygame</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/VitorGirotto/bookbot" target="_blank" class="port_link">Bookbot
+            <span class="tooltip">Programa em Python que analiza livros e mostra um relátorio das palavras e letras usadas.</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="contato" class="secao" style="display:none">
+      <h1>Contato</h1>
+      <form>
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="mensagem">Mensagem:</label><br>
+        <textarea id="mensagem" name="mensagem" rows="4"></textarea><br><br>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Por conta de a parte do Javascript ser pouca decidi colocar ela junto no arquivo do HTML :) -->
+  <script>
+    function mostrarSecao(secaoId) {
+      // Esconde todas as seções
+      const secoes = document.querySelectorAll('.secao');
+      secoes.forEach(secao => secao.style.display = 'none');
+
+      // Mostra a seção escolhida
+      document.getElementById(secaoId).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
